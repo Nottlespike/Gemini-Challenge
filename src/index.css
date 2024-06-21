@@ -165,3 +165,26 @@ body.night-mode {
 .night-mode #nightModeToggle svg {
   fill: #e0e0e0;
 }
+
+/* Specific div styles */
+div[style*="max-width: 80%; margin-bottom: 15px; padding: 10px 15px; border-radius: 20px; line-height: 1.4; overflow-wrap: break-word; align-self: flex-end; background-color: rgb(220, 248, 198); margin-left: auto;"] {
+  color: black;
+}
+body.night-mode
+  div[style*="max-width: 80%; margin-bottom: 15px; padding: 10px 15px; border-radius: 20px; line-height: 1.4; overflow-wrap: break-word; align-self: flex-end; background-color: rgb(220, 248, 198); margin-left: auto;"] {
+  background-color: #4caf50;
+}
+div[style*="max-width: 80%; margin-bottom: 15px; padding: 10px 15px; border-radius: 20px; line-height: 1.4; overflow-wrap: break-word; align-self: flex-start; background-color: rgb(224, 224, 224); margin-right: auto;"] {
+  color: black;
+}
+.chat-bubble {
+  max-width: 80%;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+  align-self: flex-end;
+  background-color: rgb(34, 139, 34); /* Darker green */
+  margin-left: auto;
+}
