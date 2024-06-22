@@ -6,34 +6,39 @@ body {
   line-height: 1.6;
   transition: background-color 0.3s ease;
 }
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
 }
+
 .instructions {
   background-color: #fff;
   border-radius: 20px;
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
-  position: relative;
 }
+
 .instructions h1 {
   color: #4caf50;
   margin-top: 0;
 }
+
 .main-content {
   display: flex;
   gap: 20px;
 }
+
 .chat-area {
   flex: 1;
-  background-color: white;
+  background-color: #fff;
   border-radius: 20px;
   padding: 20px;
   display: flex;
@@ -43,16 +48,19 @@ body {
     background-color 0.3s ease,
     color 0.3s ease;
 }
+
 .chat-messages {
   flex: 1;
   overflow-y: auto;
   margin-bottom: 20px;
   padding: 10px;
 }
+
 .chat-input {
   display: flex;
   margin-bottom: 10px;
 }
+
 .chat-input input {
   flex: 1;
   padding: 10px;
@@ -64,12 +72,13 @@ body {
     color 0.3s ease,
     border-color 0.3s ease;
 }
+
 .chat-input button,
 #resetButton,
 #exportButton {
   padding: 10px 20px;
   background-color: #4caf50;
-  color: white;
+  color: #fff;
   border: none;
   border-radius: 20px;
   margin-left: 10px;
@@ -77,9 +86,10 @@ body {
   font-size: 16px;
   transition: background-color 0.3s ease;
 }
+
 .phone-preview {
   width: 300px;
-  background-color: white;
+  background-color: #fff;
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -88,6 +98,7 @@ body {
   align-items: center;
   transition: background-color 0.3s ease;
 }
+
 .phone-screen {
   width: 260px;
   height: 460px;
@@ -96,19 +107,23 @@ body {
   overflow: hidden;
   margin-bottom: 20px;
 }
+
 .phone-screen img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 a {
   color: #4caf50;
   text-decoration: none;
   transition: color 0.3s ease;
 }
+
 a:hover {
   text-decoration: underline;
 }
+
 #nightModeToggle {
   position: absolute;
   top: 20px;
@@ -125,6 +140,7 @@ a:hover {
   transition: background-color 0.3s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 #nightModeToggle svg {
   width: 24px;
   height: 24px;
@@ -132,48 +148,118 @@ a:hover {
   transition: fill 0.3s ease;
 }
 
-/* Night mode styles */
-body.night-mode {
+/* Light mode styles */
+body.light-mode {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+body.light-mode .instructions,
+body.light-mode .chat-area,
+body.light-mode .phone-preview {
+  background-color: #fff;
+  color: #000;
+}
+
+body.light-mode .chat-input input {
+  background-color: #fff;
+  color: #000;
+  border-color: #ddd;
+}
+
+body.light-mode .chat-input button,
+body.light-mode #resetButton,
+body.light-mode #exportButton {
+  background-color: #4caf50;
+}
+
+body.light-mode a {
+  color: #4caf50;
+}
+
+body.light-mode .instructions h1 {
+  color: #4caf50;
+}
+
+body.light-mode #nightModeToggle {
+  background-color: #f0f0f0;
+}
+
+body.light-mode #nightModeToggle svg {
+  fill: #333;
+}
+
+/* Dark mode styles */
+body.dark-mode {
   background-color: #1c1f2b;
   color: #e0e0e0;
 }
-.night-mode .instructions,
-.night-mode .chat-area,
-.night-mode .phone-preview {
+
+body.dark-mode .instructions,
+body.dark-mode .chat-area,
+body.dark-mode .phone-preview {
   background-color: #2d3142;
   color: #e0e0e0;
 }
-.night-mode .chat-input input {
+
+body.dark-mode .chat-input input {
   background-color: #1c1f2b;
   color: #e0e0e0;
   border-color: #4e5d94;
 }
-.night-mode .chat-input button,
-.night-mode #resetButton,
-.night-mode #exportButton {
+
+body.dark-mode .chat-input button,
+body.dark-mode #resetButton,
+body.dark-mode #exportButton {
   background-color: #8265a7;
 }
-.night-mode a {
+
+body.dark-mode a {
   color: #a3a8e0;
 }
-.night-mode .instructions h1 {
+
+body.dark-mode .instructions h1 {
   color: #a3e048;
 }
-.night-mode #nightModeToggle {
+
+body.dark-mode #nightModeToggle {
   background-color: #4e5d94;
 }
-.night-mode #nightModeToggle svg {
+
+body.dark-mode #nightModeToggle svg {
   fill: #e0e0e0;
 }
 
-/* Specific div styles */
-div[style*="max-width: 80%; margin-bottom: 15px; padding: 10px 15px; border-radius: 20px; line-height: 1.4; overflow-wrap: break-word; align-self: flex-end; background-color: rgb(220, 248, 198); margin-left: auto;"] {
-  color: black;
+/* Message styles */
+.message {
+  max-width: 80%;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-body.night-mode
-  div[style*="max-width: 80%; margin-bottom: 15px; padding: 10px 15px; border-radius: 20px; line-height: 1.4; overflow-wrap: break-word; align-self: flex-end; background-color: rgb(220, 248, 198); margin-left: auto;"] {
+
+.message.user {
+  align-self: flex-end;
+  background-color: #4caf50;
+  margin-left: auto;
+  color: #000;
+}
+
+.message.bot {
+  align-self: flex-start;
+  background-color: #e0e0e0;
+  margin-right: auto;
+  color: #000;
+}
+
+body.dark-mode .message.user {
   background-color: #4caf50;
 }
-div[style*="max-width: 80%; margin-bottom: 15px; padding: 10px 15px; border-radius: 20px; line-height: 1.4; overflow-wrap: break-word; align-self: flex-start; background-color: rgb(224, 224, 224); margin-right: auto;"] {
-  color: black;
+
+body.dark-mode .message.bot {
+  background-color: #373a4d;
+  color: #e0e0e0;
 }

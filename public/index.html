@@ -6,10 +6,10 @@
     <title>AI-Powered Android App Creator</title>
     <link rel="stylesheet" href="src/styles.css">
 </head>
-<body>
+<body class="light-mode">
     <div class="container">
         <div class="instructions">
-            <h1>Build your own Android app with the power of AI and English!</h1>
+            <h1>Build your own Android app with the power of AI</h1>
             <p>
                 Simply input a request below and we will paint the black canvas on the right with your request. 
                 When you need to reset press the button below the canvas on the left. 
@@ -34,7 +34,7 @@
             </div>
             <div class="phone-preview">
                 <div class="phone-screen">
-                    <img id="appPreview" src="https://cdn.mos.cms.futurecdn.net/Xj58EYWQAj93cby2KK6xNY.png" alt="Android App Preview">
+                    <img id="appPreview" src="https://via.placeholder.com/260x460" alt="Android App Preview">
                 </div>
                 <button id="exportButton" onclick="exportToAPK()">Export to APK</button>
                 <a href="install_apk.html" target="_blank">How to install APK</a>
@@ -47,21 +47,8 @@
             const chatMessages = document.getElementById('chatMessages');
             const messageElement = document.createElement('div');
             messageElement.textContent = text;
-            messageElement.style.maxWidth = '80%';
-            messageElement.style.marginBottom = '15px';
-            messageElement.style.padding = '10px 15px';
-            messageElement.style.borderRadius = '20px';
-            messageElement.style.lineHeight = '1.4';
-            messageElement.style.wordWrap = 'break-word';
-            if (isUser) {
-                messageElement.style.alignSelf = 'flex-end';
-                messageElement.style.backgroundColor = '#DCF8C6';
-                messageElement.style.marginLeft = 'auto';
-            } else {
-                messageElement.style.alignSelf = 'flex-start';
-                messageElement.style.backgroundColor = '#E0E0E0';
-                messageElement.style.marginRight = 'auto';
-            }
+            messageElement.classList.add('message');
+            messageElement.classList.add(isUser ? 'user' : 'bot');
             chatMessages.appendChild(messageElement);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
@@ -77,13 +64,13 @@
                 setTimeout(() => {
                     addMessage("I'm processing your request for an Android app. The preview will update shortly.", false);
                     // Simulate updating the app preview (replace with actual preview generation)
-                    document.getElementById('appPreview').src = "/api/placeholder/260/460";
+                    document.getElementById('appPreview').src = "https://cdn.mos.cms.futurecdn.net/Xj58EYWQAj93cby2KK6xNY.png";
                 }, 1000);
             }
         }
 
         function resetCanvas() {
-            document.getElementById('appPreview').src = "/api/placeholder/260/460";
+            document.getElementById('appPreview').src = "https://via.placeholder.com/260x460";
             addMessage("Canvas has been reset. You can start a new app design.", false);
         }
 
@@ -93,9 +80,10 @@
         }
 
         function toggleNightMode() {
-            document.body.classList.toggle('night-mode');
+            document.body.classList.toggle('dark-mode');
+            document.body.classList.toggle('light-mode');
             const nightModeToggle = document.getElementById('nightModeToggle');
-            if (document.body.classList.contains('night-mode')) {
+            if (document.body.classList.contains('dark-mode')) {
                 nightModeToggle.setAttribute('aria-label', 'Toggle day mode');
             } else {
                 nightModeToggle.setAttribute('aria-label', 'Toggle night mode');
