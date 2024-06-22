@@ -1,4 +1,15 @@
 body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(45deg, #1a1a2e 0%, #16213e 100%);
+  line-height: 1.6;
+  transition: background 0.3s ease;
+  min-height: 100vh;
+  color: #ffffff;
+}
+
+body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -6,109 +17,127 @@ body {
   line-height: 1.6;
   transition: background-color 0.3s ease;
 }
+
+body.dark-mode .instructions h1 {
+  color: #a3e048;
+}
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
 }
-.instructions {
-  background-color: #fff;
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.instructions {
   padding: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
   position: relative;
 }
+
 .instructions h1 {
-  color: #4caf50;
+  color: #ffffff;
   margin-top: 0;
+  font-weight: 300;
 }
+
 .main-content {
   display: flex;
   gap: 20px;
 }
+
 .chat-area {
   flex: 1;
-  background-color: white;
-  border-radius: 20px;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
 }
+
 .chat-messages {
   flex: 1;
   overflow-y: auto;
   margin-bottom: 20px;
   padding: 10px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
 .chat-input {
   display: flex;
+  gap: 10px;
   margin-bottom: 10px;
 }
+
 .chat-input input {
   flex: 1;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 20px;
   font-size: 16px;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease,
-    border-color 0.3s ease;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
 }
+
 .chat-input button,
 #resetButton,
 #exportButton {
   padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
+  background: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
   border: none;
   border-radius: 20px;
-  margin-left: 10px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s ease;
 }
+
+.chat-input button:hover,
+#resetButton:hover,
+#exportButton:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
 .phone-preview {
   width: 300px;
-  background-color: white;
-  border-radius: 20px;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: background-color 0.3s ease;
 }
+p {
+  font-size: 20px; /* Adjust the size as needed */
+}
+
 .phone-screen {
   width: 260px;
   height: 460px;
-  background-color: #000;
   border-radius: 20px;
   overflow: hidden;
   margin-bottom: 20px;
 }
+
 .phone-screen img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 a {
-  color: #4caf50;
+  color: #ffffff;
   text-decoration: none;
-  transition: color 0.3s ease;
 }
+
 a:hover {
   text-decoration: underline;
 }
+
 #nightModeToggle {
   position: absolute;
   top: 20px;
@@ -116,52 +145,75 @@ a:hover {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #f0f0f0;
+  background: rgba(255, 255, 255, 0.2);
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease;
 }
+
 #nightModeToggle svg {
   width: 24px;
   height: 24px;
-  fill: #333;
-  transition: fill 0.3s ease;
+  fill: #ffffff;
 }
 
-/* Night mode styles */
-body.night-mode {
-  background-color: #1c1f2b;
-  color: #e0e0e0;
+.message {
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 15px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
 }
-.night-mode .instructions,
-.night-mode .chat-area,
-.night-mode .phone-preview {
-  background-color: #2d3142;
-  color: #e0e0e0;
+
+.message.user {
+  background: rgba(255, 255, 255, 0.3);
+  margin-left: auto;
+  color: #ffffff;
 }
-.night-mode .chat-input input {
-  background-color: #1c1f2b;
-  color: #e0e0e0;
-  border-color: #4e5d94;
+
+.message.bot {
+  background: rgba(255, 255, 255, 0.2);
+  margin-right: auto;
+  color: #ffffff;
 }
-.night-mode .chat-input button,
-.night-mode #resetButton,
-.night-mode #exportButton {
-  background-color: #8265a7;
+
+body.dark-mode {
+  background: linear-gradient(45deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
 }
-.night-mode a {
-  color: #a3a8e0;
+
+body.dark-mode .glassmorphism {
+  background: rgba(0, 0, 0, 0.2);
 }
-.night-mode .instructions h1 {
-  color: #a3e048;
+
+body.dark-mode .chat-input input {
+  background: rgba(0, 0, 0, 0.3);
 }
-.night-mode #nightModeToggle {
-  background-color: #4e5d94;
+
+body.dark-mode .chat-input button,
+body.dark-mode #resetButton,
+body.dark-mode #exportButton {
+  background: rgba(0, 0, 0, 0.3);
 }
-.night-mode #nightModeToggle svg {
-  fill: #e0e0e0;
+
+body.dark-mode .chat-input button:hover,
+body.dark-mode #resetButton:hover,
+body.dark-mode #exportButton:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .message.user {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .message.bot {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode #nightModeToggle {
+  background: rgba(0, 0, 0, 0.3);
 }
