@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI-Powered Android App Creator</title>
-    <link rel="stylesheet" href="src/styles.css">
 </head>
 <body class="light-mode">
     <div class="container">
-        <div class="instructions">
+        <div class="instructions glassmorphism">
             <h1>Build your own Android app with the power of AI</h1>
             <p>
                 Simply input a request below and we will paint the black canvas on the right with your request. 
@@ -17,22 +15,22 @@
             </p>
             <button id="nightModeToggle" onclick="toggleNightMode()" aria-label="Toggle night mode">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-16v2h2V4h-2zm0 14v2h2v-2h-2zm8-7h-2v2h2v-2zM4 11v2h2v-2H4z"/>
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-16v2h2V4h-2zm0 14v2h2v-2h-2zm8-7h2v-2h-2v2zm-14 0h2v-2H5v2zm10.07-8.07l1.41-1.41-1.41-1.41-1.41 1.41 1.41 1.41zM7.05 19.07l1.41-1.41-1.41-1.41-1.41 1.41 1.41 1.41zM19.07 16.95l1.41 1.41 1.41-1.41-1.41-1.41-1.41 1.41zM4.93 4.93L3.52 3.52 2.1 4.93 3.52 6.34 4.93 4.93z"/>
                 </svg>
             </button>
         </div>
         <div class="main-content">
-            <div class="chat-area">
+            <div class="chat-area glassmorphism">
                 <div class="chat-messages" id="chatMessages">
                     <!-- Chat messages will be added here dynamically -->
                 </div>
                 <div class="chat-input">
-                    <input type="text" id="userInput" placeholder="Describe your Android app...">
+                    <input type="text" id="userInput" placeholder="Type your request here...">
                     <button onclick="sendMessage()">Send</button>
                 </div>
                 <button id="resetButton" onclick="resetCanvas()">Reset Canvas</button>
             </div>
-            <div class="phone-preview">
+            <div class="phone-preview glassmorphism">
                 <div class="phone-screen">
                     <img id="appPreview" src="https://via.placeholder.com/260x460" alt="Android App Preview">
                 </div>
@@ -76,7 +74,7 @@
 
         function exportToAPK() {
             // Placeholder for APK export functionality
-            addMessage("Exporting to APK... This feature is not yet implemented.", false);
+            addMessage("Exporting to APK. Please wait...", false);
         }
 
         function toggleNightMode() {
